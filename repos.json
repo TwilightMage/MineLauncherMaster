@@ -7,6 +7,7 @@
         "loader": "forge",
         "mcVersion": "1.12.2",
         "loaderVersion": "14.23.5.2859",
-        "repoUrl": "https://github.com/deaddarkus4/techo-magic-1.12.2"
+        "repoUrl": "https://github.com/deaddarkus4/techo-magic-1.12.2",
+        "bannerUrl": "https://raw.githubusercontent.com/TwilightMage/MineLauncherMaster/refs/heads/main/TechnoMagicBanner.png"
     }
 }
