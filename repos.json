@@ -7,8 +7,22 @@
         "loader": "forge",
         "mcVersion": "1.12.2",
         "loaderVersion": "14.23.5.2859",
+        "javaVersion": "8.0",
+        "modCount": 189,
         "repoUrl": "https://github.com/deaddarkus4/techo-magic-1.12.2",
         "pageUrl": "https://raw.githubusercontent.com/TwilightMage/MineLauncherMaster/refs/heads/main/TechnoMagicContent.xaml",
-        "modCount": 189
+    },
+    "inter_dimension": {
+        "titleByLanguage": {
+            "English": "Inter-Dimension",
+            "Russian": "Меж-Пространство"
+        },
+        "mcVersion": "1.20.1",
+        "loader": "forge",
+        "loaderVersion": "47.4.0",
+        "javaVersion": "17.0",
+        "modCount": 224,
+        "repoUrl": "https://github.com/TwilightMage/InterDimension.git",
+        "pageUrl": "https://raw.githubusercontent.com/TwilightMage/MineLauncherMaster/refs/heads/main/InterDimension.xaml"
     }
 }
