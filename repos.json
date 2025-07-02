@@ -11,7 +11,7 @@
         "modCount": 189,
         "repoUrl": "https://github.com/deaddarkus4/techo-magic-1.12.2",
         "pageUrl": "https://raw.githubusercontent.com/TwilightMage/MineLauncherMaster/refs/heads/main/TechnoMagicContent.xaml",
-        "theme": "Light"
+        "pageTheme": "Light"
     },
     "inter_dimension": {
         "titleByLanguage": {
@@ -25,6 +25,6 @@
         "modCount": 224,
         "repoUrl": "https://github.com/TwilightMage/InterDimension.git",
         "pageUrl": "https://raw.githubusercontent.com/TwilightMage/MineLauncherMaster/refs/heads/main/InterDimension.xaml",
-        "theme": "Dark"
+        "pageTheme": "Dark"
     }
 }
