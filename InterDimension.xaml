@@ -1,79 +1,87 @@
 <Grid>
-      <widgets:VideoPlayer Volume="0.02"
-                           Source="C:/Users/Dragon/Downloads/MinecraftVideo.mp4"
-                           Static="C:/Users/Dragon/Downloads/MinecraftVideoFrame.png" />
+      <widgets:VideoPlayer Controls="{Binding ElementName=PlayerControls}"
+                           Volume="0.015"
+                           Source="https://raw.githubusercontent.com/TwilightMage/MineLauncherMaster/refs/heads/main/InterDimension.mp3"
+                           IgnoredControls="Animation"/>
+      <widgets:VideoPlayer Controls="{Binding ElementName=PlayerControls}"
+                           Volume="0.02"
+                           Source="https://media.githubusercontent.com/media/TwilightMage/MineLauncherMaster/refs/heads/main/InterDimension.mp4"
+                           Static="https://raw.githubusercontent.com/TwilightMage/MineLauncherMaster/refs/heads/main/InterDimensionStatic.png" />
       
       <!-- Overlay Grid for UI Elements -->
-      <Grid Margin="16">
-            <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="*"/>
-                  <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                  <RowDefinition Height="Auto"/>
-                  <RowDefinition Height="Auto"/>
-                  <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-            
-            <!-- Status Cards -->
-            <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource GlassCardStyle}" Margin="0,0,0,8" Padding="8,4">
-                  <Grid>
-                        <Grid.ColumnDefinitions>
-                              <ColumnDefinition Width="*"/>
-                              <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        
-                        <!-- Server Status Widget -->
-                        <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,12,0">
-                              <materialIcons:MaterialIcon Kind="Circle" Width="10" Height="10" 
-                                                         Foreground="{Binding ServerStatus, Converter={StaticResource ServerStatusToColorConverter}}" Margin="0,0,6,0"/>
-                              <TextBlock Text="{Binding ServerStatus}" Style="{StaticResource CaptionTextStyle}" 
-                                         Foreground="{Binding ServerStatus, Converter={StaticResource ServerStatusToColorConverter}}" FontWeight="Bold"/>
-                        </StackPanel>
-                        
-                        <!-- Online Counter Widget -->
-                        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
-                              <materialIcons:MaterialIcon Kind="People" Width="10" Height="10" 
-                                                         Foreground="{StaticResource PrimaryColor}" Margin="0,0,6,0"/>
-                              <TextBlock Text="0" Style="{StaticResource CaptionTextStyle}" 
-                                         Foreground="{StaticResource PrimaryColor}" FontWeight="Bold"/>
-                        </StackPanel>
-                  </Grid>
-            </Border>
-            
-            <!-- Technical Specs -->
-            <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource GlassCardStyle}" Margin="0,0,0,8">
-                  <StackPanel>
-                        <TextBlock Text="Technical Specifications" Style="{StaticResource Heading3Style}" Margin="0,0,0,8"/>
-                        
+      <Grid Margin="{Binding Source={x:Static widgets:MarkupInfo.ScreenMargin}}">
+            <widgets:VideoPlayerControls x:Name="PlayerControls"/>
+            <Grid Margin="16">
+                  <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                  </Grid.ColumnDefinitions>
+                  <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                  </Grid.RowDefinitions>
+                  
+                  <!-- Status Cards -->
+                  <Border Grid.Row="0" Grid.Column="1" Style="{StaticResource GlassCardStyle}" Margin="0,0,0,8" Padding="8,4">
                         <Grid>
                               <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
                                     <ColumnDefinition Width="*"/>
                               </Grid.ColumnDefinitions>
-                              <Grid.RowDefinitions>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-                                    <RowDefinition Height="Auto"/>
-                              </Grid.RowDefinitions>
                               
-                              <TextBlock Grid.Row="0" Grid.Column="0" Text="MC Version:" Style="{StaticResource CaptionTextStyle}" Margin="0,0,12,4"/>
-                              <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Info.MCVersion}" Style="{StaticResource BodyTextStyle}"/>
+                              <!-- Server Status Widget -->
+                              <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,12,0">
+                                    <materialIcons:MaterialIcon Kind="Circle" Width="10" Height="10" 
+                                                            Foreground="{Binding ServerStatus, Converter={StaticResource ServerStatusToColorConverter}}" Margin="0,0,6,0"/>
+                                    <TextBlock Text="{Binding ServerStatus}" Style="{StaticResource CaptionTextStyle}" 
+                                          Foreground="{Binding ServerStatus, Converter={StaticResource ServerStatusToColorConverter}}" FontWeight="Bold"/>
+                              </StackPanel>
                               
-                              <TextBlock Grid.Row="1" Grid.Column="0" Text="Loader:" Style="{StaticResource CaptionTextStyle}" Margin="0,0,12,4"/>
-                              <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource BodyTextStyle}">
-                                    <TextBlock.Text>
-                                          <MultiBinding Converter="{StaticResource LoaderVersionConverter}">
-                                                <Binding Path="Info.Loader"/>
-                                                <Binding Path="Info.LoaderVersion"/>
-                                          </MultiBinding>
-                                    </TextBlock.Text>
-                              </TextBlock>
-                              
-                              <TextBlock Grid.Row="2" Grid.Column="0" Text="Mods:" Style="{StaticResource CaptionTextStyle}" Margin="0,0,12,4"/>
-                              <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding ModCountString}" Style="{StaticResource BodyTextStyle}"/>
+                              <!-- Online Counter Widget -->
+                              <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                                    <materialIcons:MaterialIcon Kind="People" Width="10" Height="10" 
+                                                            Foreground="{StaticResource PrimaryColor}" Margin="0,0,6,0"/>
+                                    <TextBlock Text="0" Style="{StaticResource CaptionTextStyle}" 
+                                          Foreground="{StaticResource PrimaryColor}" FontWeight="Bold"/>
+                              </StackPanel>
                         </Grid>
-                  </StackPanel>
-            </Border>
+                  </Border>
+                  
+                  <!-- Technical Specs -->
+                  <Border Grid.Row="1" Grid.Column="1" Style="{StaticResource GlassCardStyle}" Margin="0,0,0,8">
+                        <StackPanel>
+                              <TextBlock Text="Technical Specifications" Style="{StaticResource Heading3Style}" Margin="0,0,0,8"/>
+                              
+                              <Grid>
+                                    <Grid.ColumnDefinitions>
+                                          <ColumnDefinition Width="Auto"/>
+                                          <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                          <RowDefinition Height="Auto"/>
+                                          <RowDefinition Height="Auto"/>
+                                          <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    
+                                    <TextBlock Grid.Row="0" Grid.Column="0" Text="MC Version:" Style="{StaticResource CaptionTextStyle}" Margin="0,0,12,4"/>
+                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Info.MCVersion}" Style="{StaticResource BodyTextStyle}"/>
+                                    
+                                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Loader:" Style="{StaticResource CaptionTextStyle}" Margin="0,0,12,4"/>
+                                    <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource BodyTextStyle}">
+                                          <TextBlock.Text>
+                                                <MultiBinding Converter="{StaticResource LoaderVersionConverter}">
+                                                      <Binding Path="Info.Loader"/>
+                                                      <Binding Path="Info.LoaderVersion"/>
+                                                </MultiBinding>
+                                          </TextBlock.Text>
+                                    </TextBlock>
+                                    
+                                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Mods:" Style="{StaticResource CaptionTextStyle}" Margin="0,0,12,4"/>
+                                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding ModCountString}" Style="{StaticResource BodyTextStyle}"/>
+                              </Grid>
+                        </StackPanel>
+                  </Border>
+            </Grid>
       </Grid>
 </Grid>
