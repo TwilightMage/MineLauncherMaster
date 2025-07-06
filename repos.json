@@ -1,18 +1,4 @@
 {
-    "techno_magic": {
-        "titleByLanguage": {
-            "English": "Techno-Magic",
-            "Russian": "Техно-Магия"
-        },
-        "loader": "forge",
-        "mcVersion": "1.12.2",
-        "loaderVersion": "14.23.5.2859",
-        "javaVersion": "8.0",
-        "modCount": 189,
-        "repoUrl": "https://github.com/deaddarkus4/techo-magic-1.12.2",
-        "pageUrl": "https://raw.githubusercontent.com/TwilightMage/MineLauncherMaster/refs/heads/main/TechnoMagicContent.xaml",
-        "pageTheme": "Light"
-    },
     "inter_dimension": {
         "titleByLanguage": {
             "English": "Inter-Dimension",
